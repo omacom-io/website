@@ -18,10 +18,25 @@
 
   <link rel="stylesheet" type="text/css" href="assets/css/fonts.css">
   <style>
+    :root {
+      --rgb-background-night: 26, 27, 38;
+      --rgb-black: 0, 0, 0;
+      --rgb-terminal-blue: 122, 162, 247;
+      --rgb-turquoise: 180, 249, 248;
+
+      --color-background-night: rgb(var(--rgb-background-night));
+      --color-terminal-blue: rgb(var(--rgb-terminal-blue));
+      --color-turquoise: rgb(var(--rgb-turquoise));
+
+      --transition: 0.15s cubic-bezier(0.33, 1, 0.68, 1);
+    }
     html, body {
       background-color: #000000;
-      color: #a9b1d6;
+      color: #ffffff;
       font-family: 'Cascadia Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
+    a {
+      color: #ffffff;
     }
     body {
       display: flex;
@@ -40,32 +55,85 @@
       text-align: center;
       margin: 0 0 3rem;
     }
-    .links {
-      margin-bottom: 2rem;
+    .nav {
       display: flex;
-      gap: 1rem;
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+      padding-inline: 2em;
+      margin-bottom: 2rem;
     }
-    a {
-      color: #a9b1d6;
-      font-size: 1.2rem;
+    .nav__row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+    }
+    .button {
+      align-items: center;
+      background: #ec4dc7;
+      border: none;
+      border-radius: 0.4em;
+      box-shadow:
+        0 1px 0 0 rgba(var(--rgb-black), 0.1),
+        0 0.2em 1.2em -0.4em rgba(var(--rgb-black), 0.2),
+        0 0.4em 2.0em -0.8em rgba(var(--rgb-black), 0.3),
+        0 0.4em 0.4em -0.8em rgba(var(--rgb-black), 0.4),
+        0 0.8em 0.8em -1.2em rgba(var(--rgb-black), 0.5),
+        0 1.2em 1.2em -1.6em rgba(var(--rgb-black), 0.6);
+      color: #1a1b26;
+      cursor: pointer;
+      display: flex;
+      font-weight: 700;
+      gap: 1ch;
+      height: 2.9em;
+      line-height: 1;
+      padding-inline: 1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition:
+        background var(--transition),
+        color var(--transition);
+    }
+    .button svg {
+      height: 1.4em;
+      overflow: visible;
+      width: 1.4em;
+    }
+    @media(hover: hover) {
+      .button:hover {
+        background: #f97ad9;
+        color: #1a1b26;
+      }
     }
   </style>
 </head>
 
 <body>
   <img src="oma.png" alt="Omacom">
-  <h1>Beautiful Linux Systems</h1>
-  <div class="links">
-    <a href="https://omarchy.org">Omarchy</a> |
-    <a href="https://omakub.org">Omakub</a> |
-    <a href="https://omacon.org">Omacon</a>
-  </div>
+  <h1>Beautiful Linux Systems by <a href="https://dhh.dk">DHH</a></h1>
 
-  <div class="links">
-    <a href="https://discord.gg/tXFUdasqhY">Join us on Discord</a>
-  </div>
-  <div class="links">
-    <a href="https://learn.omacom.io/">Learn from manuals</a>
-  </div>
+  <nav class="nav">
+    <div class="nav__row">
+      <a class="button" href="https://omarchy.org">
+        <span>Omarchy</span>
+      </a>
+      <a class="button" href="https://omakub.org">
+        <span>Omakub</span>
+      </a>
+      <a class="button" href="https://omacon.org">
+        <span>Omacon</span>
+      </a>
+    </div>
+    <div class="nav__row">
+      <a class="button" href="https://learn.omacom.io/">
+      <svg fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="m0 4.49992c0-.3978.158025-.77931.439312-1.0606s.662798-.43931 1.060598-.43931h8.50549c2.4538 0 4.6337 1.17992 5.9996 3.00181.6982-.9334 1.6047-1.69085 2.6474-2.212 1.0426-.52115 2.1926-.7916 3.3582-.78981h8.4895c.3978 0 .7793.15802 1.0606.43931s.4393.6628.4393 1.0606v20.99868c0 .3978-.158.7793-.4393 1.0606s-.6628.4393-1.0606.4393h-9.0134c-.591 0-1.1761.1164-1.722.3425-.546.2261-1.042.5576-1.4598.9754l-1.244 1.2419c-.2812.2809-.6624.4387-1.0599.4387s-.7787-.1578-1.0599-.4387l-1.244-1.2419c-.4178-.4178-.9138-.7493-1.4598-.9754-.5459-.2261-1.131-.3425-1.722-.3425h-9.01539c-.3978 0-.779311-.158-1.060598-.4393s-.439312-.6628-.439312-1.0606zm14.5011 20.64668.008-10.1453-.004-4.5058c-.0011-1.19267-.4756-2.33616-1.3194-3.17916-.8437-.84299-1.9876-1.31652-3.1803-1.31652h-7.00559v17.99888h7.51349c1.4108-.0001 2.793.3978 3.9878 1.1479zm3.0078-14.6471-.008 14.6431c1.1942-.7477 2.5748-1.1442 3.9838-1.1439h7.5135v-17.99888h-6.9896c-1.1934 0-2.3379.47408-3.1818 1.31794-.8438.84386-1.3179 1.98838-1.3179 3.18174z" fill="currentColor"/></svg>
+      <span>Manuals</span>
+    </a>
+    <a class="button" href="https://discord.gg/tXFUdasqhY">
+      <svg fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"><path d="m20.5047 3.87149c-.3126.55521-.5935 1.12957-.8487 1.71668-2.4251-.36375-4.8948-.36375-7.3263 0-.2488-.58711-.536-1.16147-.8488-1.71668-2.2782.38929-4.4991 1.07213-6.60504 2.03577-4.173678 6.18384-5.30323 12.20824-4.741638 18.14964 2.444238 1.8061 5.181988 3.1846 8.098458 4.0652.65728-.8806 1.23806-1.8188 1.73585-2.7952-.94455-.351-1.85714-.7913-2.73143-1.3018.22975-.166.45309-.3383.6701-.5042 5.1246 2.4122 11.0595 2.4122 16.1904 0 .217.1787.4404.351.6701.5042-.8743.5168-1.7869.9508-2.7377 1.3082.4978.9764 1.0785 1.9145 1.7358 2.7952 2.9165-.8807 5.6542-2.2528 8.0985-4.0588.6637-6.8923-1.136-12.8656-4.7545-18.15603-2.0995-.96366-4.3204-1.64651-6.5987-2.02942zm-9.8215 16.52871c-1.57623 0-2.88455-1.4295-2.88455-3.1972 0-1.7678 1.25721-3.2037 2.87815-3.2037 1.621 0 2.9101 1.4423 2.8846 3.2037-.0255 1.7613-1.2699 3.1972-2.8782 3.1972zm10.6321 0c-1.5827 0-2.8782-1.4295-2.8782-3.1972 0-1.7678 1.2572-3.2037 2.8782-3.2037 1.6208 0 2.9036 1.4423 2.878 3.2037-.0254 1.7613-1.2699 3.1972-2.878 3.1972z" fill="currentColor"/></svg>
+      <span>Discord</span>
+    </a>
+  </nav>
 </body>
 </html>
