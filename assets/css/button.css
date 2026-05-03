@@ -1,0 +1,42 @@
+.button {
+  align-items: center;
+  background: var(--color-pink);
+  border: none;
+  border-radius: 0.4em;
+  color: var(--color-black);
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  gap: 1ch;
+  height: 2.9em;
+  line-height: 1;
+  padding-inline: var(--space-medium);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background var(--transition),
+    color var(--transition)
+  ;
+}
+
+.button svg {
+  height: 1.4em;
+  overflow: visible;
+  width: 1.4em;
+}
+
+.button span {
+  margin-bottom: -0.1875em;
+  margin-top: -0.125em;
+}
+
+
+
+@media(hover: hover) {
+
+  .button:hover {
+    background: var(--color-pink-light);
+    color: var(--color-black);
+  }
+
+}

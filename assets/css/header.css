@@ -1,0 +1,23 @@
+.header {
+  background: url('../images/omacom.png') center top / auto 16em no-repeat;
+  display: grid;
+  margin-top: var(--space-xx-large);
+  padding-inline: var(--space-large);
+  padding-top: 16em;
+}
+
+.header h1 {
+  font-size: var(--font-size-medium);
+  text-align: center;
+}
+
+
+
+@media(min-width: 64em) {
+
+  .header {
+    margin-top: var(--space-xxxx-large);
+    padding-inline: var(--space-xx-large);
+  }
+
+}

@@ -1,0 +1,31 @@
+:root {
+
+  --rgb-black: 0, 0, 0;
+  --rgb-pink: 236, 77, 199;
+  --rgb-pink-light: 249, 122, 217;
+  --rgb-white: 255, 255, 255;
+
+  --color-black: rgb(var(--rgb-black));
+  --color-pink: rgb(var(--rgb-pink));
+  --color-pink-light: rgb(var(--rgb-pink-light));
+  --color-white: rgb(var(--rgb-white));
+
+  --font-family: 'Cascadia Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --font-size: clamp(0.625rem, 1.25vw, 1rem);
+  --font-size-small: 80%;
+  --font-size-medium: 125%;
+  --font-size-large: 200%;
+
+  --line-height: 1.4;
+
+  --space-small: 0.5em;
+  --space-medium: 1em;
+  --space-large: 2em;
+  --space-x-large: 3em;
+  --space-xx-large: 4em;
+  --space-xxx-large: 5em;
+  --space-xxxx-large: 6em;
+
+  --transition: 0.15s cubic-bezier(0.33, 1, 0.68, 1);
+
+}

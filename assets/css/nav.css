@@ -1,0 +1,25 @@
+.nav {
+  display: grid;
+  gap: var(--space-medium);
+  margin-bottom: var(--space-xx-large);
+  margin-top: var(--space-x-large);
+  padding-inline: var(--space-large);
+}
+
+.nav__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-medium);
+  justify-content: center;
+}
+
+
+
+@media(min-width: 64em) {
+
+  .nav {
+    margin-bottom: var(--space-xxxx-large);
+    padding-inline: var(--space-xx-large);
+  }
+
+}
